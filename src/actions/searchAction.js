@@ -1,4 +1,5 @@
 import {SEARCH_MOVIE, FETCH_MOVIES, HAS_ERROR, SET_LOADING, CURRENT_MOVIE} from '../actions/types';
+import { API_KEY } from './API';
 
 export const searchMovie = searchTerm => dispath => {
    try {
@@ -16,7 +17,7 @@ export const searchMovie = searchTerm => dispath => {
 
 export const fetchMovie = searchTerm => async dispatch => {
   try {
-    const res = await fetch(`https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API}&s=${searchTerm}`);
+    const res = await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${searchTerm}`);
     const data = await res.json();
 
     dispatch({
@@ -37,7 +38,7 @@ export const fetchMovie = searchTerm => async dispatch => {
 //FETCH SELECTED MOVIE DETAILS
 export const currentMovie = id => async dispatch => {
     try {
-        const res = await fetch(`https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API}&i=${id}`);
+        const res = await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`);
         const data = await res.json();
 
         dispatch({
