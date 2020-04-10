@@ -263,7 +263,7 @@ td {
 }
 
 /* For higher resolution displays */
-@media only screen and (min-width: 1800px) {
+@media only screen and (min-width: 2000px) {
   html {
     font-size: 100%;
   }

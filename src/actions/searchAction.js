@@ -16,7 +16,7 @@ export const searchMovie = searchTerm => dispath => {
 
 export const fetchMovie = searchTerm => async dispatch => {
   try {
-    const res = await fetch(`http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API}&s=${searchTerm}`);
+    const res = await fetch(`https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API}&s=${searchTerm}`);
     const data = await res.json();
 
     dispatch({
@@ -37,7 +37,7 @@ export const fetchMovie = searchTerm => async dispatch => {
 //FETCH SELECTED MOVIE DETAILS
 export const currentMovie = id => async dispatch => {
     try {
-        const res = await fetch(`http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API}&i=${id}`);
+        const res = await fetch(`https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API}&i=${id}`);
         const data = await res.json();
 
         dispatch({
